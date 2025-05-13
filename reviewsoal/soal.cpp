@@ -23,5 +23,27 @@ class bangunDatar{
         return 2 * (panjang + lebar);
     };
 public:
-    //untuk mengakses panjang dan luar
+    //untuk mengakses panjang dan lebar
+    friend void persegiPanjang::inputData(bangunDatar &bd);
+    //untuk mengakses fungsi
+    friend void persegiPanjang::outputData(bangunDatar &bd);
+};
+
+void persegiPanjang::inputData(bangunDatar &bd){
+    cout << "Masukkan Panjang : ";
+    cin >> bd.panjang;
+    cout << "Masukkan Lebar : ";
+    cin >> bd.lebar;
 }
+
+void persegiPanjang::outputData(bangunDatar &bd){
+    cout << "Luas : " << bd.hitungLuas() << endl;
+    cout << "Keliling : " << bd.hitungKeliling() << endl;
+};
+
+int main(){
+    persegiPanjang pP;
+    bangunDatar bD;
+    pP.inputData(bD);
+    pP.outputData(bD);
+};
